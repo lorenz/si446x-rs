@@ -1,0 +1,21 @@
+[package]
+name = "si446x"
+version = "0.1.0"
+authors = ["Lorenz Brun <lorenz@dolansoft.org>"]
+edition = "2018"
+
+[dependencies]
+embedded-hal = "0.2.2"
+nb = "0.1.1"
+cortex-m = "0.5.7"
+cortex-m-rt = "0.6.3"
+panic-halt = "0.2.0"
+
+[dependencies.stm32f103xx-hal]
+features = ["rt"]
+path = "/home/lorenz/programs/stm32f103xx-hal"
+
+
+[features]
+# Enables command validation and panics if an error occurs on the radio. Disabled by default for performance and power consumption.
+debug = []
