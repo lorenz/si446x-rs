@@ -1,0 +1,20 @@
+stages:
+  - check
+  - docs
+
+check:
+  stage: check
+  image: rustlang/rust:nightly
+  script:
+    - cargo check
+
+docs:
+  stage: docs
+  image: rustlang/rust:nightly
+  script:
+    - cargo doc
+  artifacts:
+    paths:
+      - target/doc
+    untracked: false
+    expire_in: 7 days
